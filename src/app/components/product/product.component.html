@@ -1,0 +1,30 @@
+<div *ngIf="product === ''">
+  Cargando..
+</div>
+
+<div *ngIf="product === null; else exists">
+ <h1> El producto no existe </h1>
+ <a class="link" (click)="goBack()">Volver</a>
+</div>
+
+<ng-template #exists>
+  <div class="card mb-3">
+    <img [src]="product.image" onError="this.src='assets/images/noimage.png'" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">${{ product.price }}</p>
+      <div class="row">
+        <div class="col">
+          <a class="card-link" (click)="description()">Ver Descripción</a>
+        </div>
+        <!-- <div class="col">
+          <a class="card-link" (click)="nutritionalInfo()">Información Nutricional</a>
+        </div> -->
+        <div *ngIf="descriptionIsShowing === true">
+          <p> {{ product.description }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

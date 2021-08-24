@@ -1,0 +1,18 @@
+<div >
+        <h1>
+            Ingrese el codigo aqui
+        </h1>
+        <div class="form-group mt-3">
+            
+            <input type="text"
+                    class="form-control"
+                    name="code"
+                    [(ngModel)]="code"
+                    placeholder="Ingrese código de barra"
+                    required
+                    >
+        </div>
+        <div class="mt-2">
+            <button class="button btn btn-outline-primary" type="button" [disabled]="!isCode()" (click)="search()">Consultar</button>
+        </div>
+</div>

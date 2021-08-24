@@ -1,0 +1,20 @@
+<div class="jumbotron jumbotron-fluid container">
+
+    <div>
+        <h1 class="display-3">Consultor de precios</h1>
+        <p class="lead">Aqui puede escoger la forma en la que desea consultar el precio de su producto</p>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button type="button" (click)="goTo('scanner')" class="btn btn-outline-primary btn-lg">
+                {{ scannerText }}
+            </button>
+        </div>
+        <div class="col">
+            <button type="button" (click)="goTo('input')" class="btn btn-outline-secondary btn-lg">
+                {{ writeText }}
+            </button>
+        </div>
+    </div>
+</div>
